@@ -16,16 +16,16 @@ jobs:
       - uses: actions/checkout@master
       
       # Setup Node.js environment
-      - name: Set up Node.js 17
+      - name: Set up Node.js 16
         uses: actions/setup-node@v2
         with:
-          node-version: '17'
-
+          node-version: '16'
+      
       # Install dependencies and build the project
       - name: Install dependencies and build
         run: |
           npm install
-          npm run build -- --prod
+          npm run build -- --configuration production
 
       # Deploy to Azure Web apps staging slot
       - uses: azure/login@v1
